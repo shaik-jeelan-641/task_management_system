@@ -1,0 +1,148 @@
+
+
+.signup-background-container{
+    background-image: url("https://img.freepik.com/free-vector/gradient-technological-background_23-2148884155.jpg?semt=ais_hybrid");
+      background-repeat: no-repeat;
+    background-size: cover;
+    
+    overflow: hidden;
+    height: 100vh;
+}
+
+.signup-container {
+    margin: 100px 50px;
+   
+}
+
+.signup-box:hover {
+    box-shadow: 0 0 20px rgb(223, 148, 148);
+    /* transform: scale(1.1); */
+}
+
+.signup-box {
+    background: #ffffffbc;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    transition: 0.5s;
+    animation: zoomIn 0.6s ease-out;
+    transition: 0.5s;
+}
+
+.signup-box:hover h1 {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.user {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+::placeholder{
+    color: rgba(0, 0, 0, 0.732);
+    
+}
+.user input {
+    outline: none;
+    width: 92%;
+    background-color: rgba(0, 0, 0, 0.156);
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 92%;
+}
+
+.password-wrapper input {
+    width: 92%;
+    padding-right: 40px;
+}
+
+.password-wrapper i {
+    position: absolute;
+    right: 0px;
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #666;
+}
+
+.password-wrapper i:hover {
+    color: #000;
+}
+
+.input-group input:hover,
+.user input:hover {
+    box-shadow: 0 0 10px rgb(78, 184, 255);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin: 15px 0;
+}
+
+.checkbox-group p {
+    font-size: 12px;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+.signup-button {
+    background-color: #2d64e3;
+    color: white;
+    border: none;
+    padding: 15px;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signup-button:hover {
+    background-color: #1d4dbd;
+}
+
+.or-text {
+    margin: 20px 0;
+    color: #363636;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons i {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
