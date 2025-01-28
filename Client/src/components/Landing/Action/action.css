@@ -1,0 +1,38 @@
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: green; 
+  color: white;
+  padding: 40px 20px;
+  height: 80vh;
+}
+
+.cta h2 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cta .btn-primary {
+padding: 10px 30px;
+border-radius: 50px;
+border: 1px solid rgb(255, 255, 255);
+background-color: transparent;
+color: white;
+font-size: 20px;
+transition: 0.4s;
+}
+
+.cta .btn-primary:hover{
+    background-color: rgb(12, 221, 33);
+    border: 1px solid rgb(12, 221, 33);
+    box-shadow: 0 0 10px rgba(230, 235, 230, 0.497);
+    transform: scale(1.1);
+}
+

@@ -57,17 +57,19 @@
 }
 
 #Demo{
-    border: 2px solid black;
+    border: 2px solid rgb(7, 241, 23);
+    background-color: transparent;
+    color: white;
 }
 #Demo:hover{
-    background-color: rgb(170, 170, 170);
+    background-color: rgb(7, 241, 23);
 }
 
 #start{
-    background-color: black;
+    background-color:rgb(37, 182, 46);
     color: white;
 }
 
 #start:hover{
-    background-color: rgb(53, 52, 52);
+    background-color: black;
 }

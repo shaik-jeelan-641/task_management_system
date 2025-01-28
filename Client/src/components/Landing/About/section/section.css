@@ -1,0 +1,31 @@
+.card{
+    width: 28%;
+    height: 500px;
+   box-shadow: 0 0 10px rgba(252, 252, 252, 0.77);
+   padding: 10px;
+   background-color: white;
+   border-radius: 6px;
+
+}
+
+.card img{
+    width: 420px;
+    height: 400px;
+    margin: auto;
+    transition: 0.4s;
+   
+}
+
+.card img:hover{
+    transform: scale(1.1);
+}
+
+.card h2{
+    text-align: center;
+    font-size: 28px;
+}
+
+.card p{
+    text-align: center;
+    font-size: 18px;
+}

@@ -1,0 +1,24 @@
+.about-container{
+  
+    width: 100%;
+    height: 80vh;
+  
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+
+.about {
+     background-color: black;
+      margin-top: 110px;
+      padding-top: 30px;
+}
+.about h1{
+     color: white;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    
+}
+
