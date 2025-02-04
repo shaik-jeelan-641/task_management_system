@@ -1,0 +1,154 @@
+import { 
+  FaBars, FaHome, FaTasks, FaInbox, FaChartLine, FaFolderOpen, 
+  FaBullseye, FaUserFriends, FaPlus, FaQuestionCircle, FaStar, 
+  FaRegFileAlt, FaList, FaColumns, FaRegCalendarAlt, FaChartBar, 
+  FaUsers, FaComments, FaPaperclip, FaCogs, FaUser, FaSignOutAlt, 
+  FaUserCog 
+} from "react-icons/fa";
+import { IoMdAddCircleOutline, IoMdMore } from "react-icons/io";
+import { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import "./Dashboard.css";
+import { useNavigate } from "react-router-dom";
+import TaskList from "../Tasks/TaskList/TaskList";
+import Display from "../Display/Display";
+import TaskBoard from "../TaskBoard/TaskBoard";
+import Calender from "../Calender/Calender";
+
+function Dashboard() {
+  const [activeTab, setActiveTab] = useState("overview");
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+  const [profileMenuVisible, setProfileMenuVisible] = useState(false);
+  const [createMenuVisible, setCreateMenuVisible] = useState(false);
+  const [avatar, setAvatar] = useState('');
+  const [username, setUsername] = useState('');
+  const profileRef = useRef(null);
+  const navigate = useNavigate();
+  const [taskList, setTaskList] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/auth/profile", {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    })
+    .then((response) => {
+      setUsername(response.data.name);
+      setAvatar(response.data.avatar); 
+    })
+    .catch((error) => console.error("Error fetching user data:", error));
+  }, []);
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
+  return (
+    <>
+      <nav className="navbar">
+        <div className="nav-left">
+          <FaBars className="icon" onClick={() => setSidebarVisible(!sidebarVisible)} />
+          <button className="create-btn">
+            <IoMdAddCircleOutline className="icon" />
+            <span>Create</span>
+          </button>
+        </div>
+        <input type="text" placeholder="Search" className="search-input" />
+        <div className="nav-right">
+          <span className="trial-text">30 days left in trial</span>
+          <button className="billing-btn">Add billing info</button>
+          <FaQuestionCircle className="icon" />
+          <div className="profile-icon">
+            {avatar ? <img src={avatar} alt="Avatar" className="avatar-img" /> : "U"}
+          </div>
+        </div>
+      </nav>
+
+      <div className="project-plan">
+        <div className="header">
+          <h1><FaRegFileAlt /> Cross-functional project plan</h1>
+          <FaStar className="icon-btn" />
+          <button className="status-btn">Set status</button>
+        </div>
+        <div className="nav">
+          <span onClick={() => handleTabClick("overview")} className={activeTab === "overview" ? "active" : ""}>
+            <FaRegFileAlt /> Overview
+          </span>
+          <span onClick={() => handleTabClick("list")} className={activeTab === "list" ? "active" : ""}>
+            <FaList /> List
+          </span>
+          <span onClick={() => handleTabClick("board")} className={activeTab === "board" ? "active" : ""}>
+            <FaColumns /> Board
+          </span>
+          <span onClick={() => handleTabClick("timeline")} className={activeTab === "timeline" ? "active" : ""}>
+            <FaRegCalendarAlt /> Timeline
+          </span>
+          <span onClick={() => handleTabClick("dashboard")} className={activeTab === "dashboard" ? "active" : ""}>
+            <FaChartBar /> Dashboard
+          </span>
+          <span onClick={() => handleTabClick("calendar")} className={activeTab === "calendar" ? "active" : ""}>
+            <FaRegCalendarAlt /> Calendar
+          </span>
+          <span onClick={() => handleTabClick("workflow")} className={activeTab === "workflow" ? "active" : ""}>
+            <FaUsers /> Workflow
+          </span>
+          <span onClick={() => handleTabClick("messages")} className={activeTab === "messages" ? "active" : ""}>
+            <FaComments /> Messages
+          </span>
+          <span onClick={() => handleTabClick("files")} className={activeTab === "files" ? "active" : ""}>
+            <FaPaperclip /> Files
+          </span>
+        </div>
+      </div>
+
+      <div className="tab-content">
+        {activeTab === "overview" && <Overview />}
+        {activeTab === "list" && <TaskList />}
+        {activeTab === "board" && <TaskBoard />}
+        {activeTab === "timeline" && <Timeline />}
+        {activeTab === "dashboard" && <Display/>}
+        {activeTab === "calendar" && <Calender />}
+        {activeTab === "workflow" && <Workflow />}
+        {activeTab === "messages" && <Messages />}
+        {activeTab === "files" && <Files />}
+      </div>
+    </>
+  );
+}
+
+// Components for each section
+function Overview() {
+  return <div><h2>Overview Section</h2></div>;
+}
+
+function ListView() {
+  return <div><h2>Task List View</h2></div>;
+}
+
+function BoardView() {
+  return <div><h2>Board View</h2></div>;
+}
+
+function Timeline() {
+  return <div><h2>Timeline View</h2></div>;
+}
+
+function DashboardView() {
+  return <div><h2>Dashboard View</h2></div>;
+}
+
+function Calendar() {
+  return <div><h2>Calendar View</h2></div>;
+}
+
+function Workflow() {
+  return <div><h2>Workflow View</h2></div>;
+}
+
+function Messages() {
+  return <div><h2>Messages View</h2></div>;
+}
+
+function Files() {
+  return <div><h2>Files View</h2></div>;
+}
+
+export default Dashboard;

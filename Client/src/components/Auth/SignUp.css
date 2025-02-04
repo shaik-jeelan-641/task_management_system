@@ -7,6 +7,9 @@
     
     overflow: hidden;
     height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .signup-container {
@@ -143,6 +146,32 @@
 .social-icons i {
     font-size: 24px;
     cursor: pointer;
+}
+
+.animated-text{
+    width: 40%;
+    text-align: center;
+    color: white;
+    animation: SlideUp 10s ease-in-out forwards infinite;
+}
+
+.animated-text h1{
+    font-size: 4rem ;
+}
+
+@keyframes SlideUp {
+  0% {
+    transform: translateZ(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateZ(100%);
+    opacity: 0;
+  }
 }
 
 

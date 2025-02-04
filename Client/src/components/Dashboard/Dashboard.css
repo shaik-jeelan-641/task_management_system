@@ -1,0 +1,345 @@
+/*Dashboard.css*/
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d;
+    padding: 10px 20px;
+    color: white;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.create-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-input {
+    background-color: #4a4a4a;
+    border: none;
+    padding: 8px;
+    border-radius: 20px;
+    width: 40%;
+    color: white;
+    outline: none;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.trial-text {
+    font-size: 14px;
+}
+
+.billing-btn {
+    background-color: #f1c40f;
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to right, #a855f7, #ec4899);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+   cursor: pointer;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+
+
+.sidebar {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    
+    background-color: #222;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .sidebar ul li .icon {
+    margin-right: 10px;
+  }
+  
+  .highlighted {
+    background-color: #444;
+    border-radius: 5px;
+  }
+  
+  .invite-btn {
+    background-color: #333;
+    color: white;
+    border: 1px solid #777;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .invite-btn .icon {
+    margin-right: 5px;
+  }
+
+
+
+  /* profile drop down */
+
+  .profile-menu {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background: #353535;
+    color: #fff;
+    border-radius: 8px;
+    width: 250px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .trial-info {
+    color: #f4a261;
+    font-size: 12px;
+    display: block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    
+  }
+  .under-line{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 5px 0;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  
+  .profile-avatar {
+    background: #a78bfa;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .profile-header h3 {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .status-dot {
+    color: orange;
+    font-size: 12px;
+  }
+  
+  .profile-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .profile-menu ul li {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .profile-menu ul li:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .myprofile-icon{
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  
+
+/* Cross-functional project plan */
+
+  .project-plan {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header h1 {
+    font-size: 15px;
+  }
+  
+ 
+  
+  .icon-btn {
+    color: gray;
+    cursor: pointer;
+  }
+  
+  .status-btn {
+    background: none;
+    border: none;
+    color: gray;
+    cursor: pointer;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+    color: #b0b0b0;
+  }
+  
+  .nav span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .avatar {
+    background-color: purple;
+    color: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .share-btn,
+  .customize-btn {
+    background-color: #0cc20f;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .customize-btn {
+    background-color: #ff8800;
+  }
+
+  
+.create-container {
+  position: relative;
+}
+
+.create-dropdown {
+  position: absolute;
+  top: 0%;
+  left: 10%;
+  background: rgb(47, 47, 47);
+
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  z-index: 10;
+}
+
+.create-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.create-dropdown li {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.create-dropdown li:hover {
+  background: #4a4949;
+}
+
+.menu-icon {
+  margin-right: 10px;
+}
+
+.nav span {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.nav span.active {
+  background-color: #0ba11a;
+  color: white;
+  border-radius: 5px;
+}

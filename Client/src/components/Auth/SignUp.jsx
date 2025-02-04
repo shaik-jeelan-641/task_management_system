@@ -91,6 +91,11 @@ function SignUp() {
           </div>
         </div>
       </div>
+      <div className="animated-text">
+        <h1>Making the task more Exciting
+          Stay On Track, Achieve Your Best!
+        </h1>
+      </div>
     </div>
   );
 }

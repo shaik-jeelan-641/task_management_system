@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LanguageIcon from '@mui/icons-material/Language';
 import './navbar.css';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(null);
-
+    const navigate= useNavigate()
     const toggleDropdown = (menu) => {
         setIsMenuOpen(isMenuOpen === menu ? null : menu);
     }
@@ -149,7 +149,7 @@ const Navbar = () => {
           <li>|</li>
           <li><Link className="navLinks">Contact Us</Link></li>
           <li><Link className="navLinks" to="/login">Log In</Link></li>
-          <li><button>Get Started</button></li>
+          <li><button onClick={()=>{navigate('/signup')}}>Get Started</button></li>
         </ul>
       </section>
     </div>
