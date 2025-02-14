@@ -4,8 +4,8 @@ import "./taskList.css"
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
-  const [editTask, setEditTask] = useState(null); // State for editing a task
-  const [showModal, setShowModal] = useState(false); // Modal visibility state
+  const [editTask, setEditTask] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const fetchTasks = async () => {
     try {
@@ -30,24 +30,24 @@ const TaskList = () => {
   };
 
   const handleEdit = (task) => {
-    setEditTask(task); 
-    setShowModal(true); 
+    setEditTask(task);
+    setShowModal(true);
   };
 
   const handleUpdate = async (updatedTask) => {
     try {
       const response = await axios.put(`http://localhost:5000/api/task/updateTask/${updatedTask._id}`, updatedTask);
-      setTasks(tasks.map((task) => (task._id === updatedTask._id ? response.data : task))); // Update task in the list
-      setShowModal(false); // Close the modal after update
-      setEditTask(null); // Reset the edit task state
+      setTasks(tasks.map((task) => (task._id === updatedTask._id ? response.data : task)));
+      setShowModal(false);
+      setEditTask(null);
     } catch (err) {
       console.error('Error updating task:', err);
     }
   };
 
   const closeModal = () => {
-    setShowModal(false); // Close the modal without making changes
-    setEditTask(null); // Reset the edit task state
+    setShowModal(false);
+    setEditTask(null);
   };
 
   return (
