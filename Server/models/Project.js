@@ -9,12 +9,11 @@ const ProjectSchema = new mongoose.Schema({
     description: {
         type: String,
     },
-    dependencies: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Dependency',
-        },
-    ],
+   category:{
+    type:String,
+    enum: ["Web Development", "Mobile App", "Machine Learning"],
+    default:"Web Development",
+   },
 });
 
 const Project = mongoose.model('Project', ProjectSchema);

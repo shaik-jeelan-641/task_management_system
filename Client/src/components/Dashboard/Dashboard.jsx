@@ -15,6 +15,7 @@ import Display from "../Display/Display";
 import Calender from "../Calender/Calender";
 import TaskBoard from "../TaskBoard/TaskBoard";
 import { Avatar } from "@mui/material"; 
+import { useProject } from "../../context/projectContext"; 
 
 function Dashboard({ id }) {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -26,6 +27,8 @@ function Dashboard({ id }) {
   const navigate = useNavigate();
   const [taskList, setTaskList] = useState([]);
   const [activeTab, setActiveTab] = useState('overview');
+
+  const { projectName } = useProject();
 
   useEffect(() => {
     if (!id) return;
@@ -80,7 +83,7 @@ function Dashboard({ id }) {
                 <li onClick={() => navigate('/form')}>
                   <FaTasks className="dropdown-icon" /> Task
                 </li>
-                <li onClick={() => alert("Create Project")}>
+                <li onClick={() => navigate("/projectForm")}>
                   <FaFolderOpen className="dropdown-icon" /> Project
                 </li>
                 <li onClick={() => alert("Create Goal")}>
@@ -136,7 +139,9 @@ function Dashboard({ id }) {
 
       <div className="project-plan">
         <div className="header">
-          <h1><FaRegFileAlt /> Cross-functional project plan</h1>
+          <h1><FaRegFileAlt /> 
+           {projectName ? `Project: ${projectName}` : "Dashboard"}
+          </h1>
           <FaStar className="icon-btn" />
           <button className="status-btn">Set status</button>
         </div>

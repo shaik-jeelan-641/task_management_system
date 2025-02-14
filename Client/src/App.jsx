@@ -6,6 +6,7 @@ import Home from './components/Landing/home/Home';
 import Dashboard from './components/Dashboard/Dashboard';
 import NotificationList from './components/notifications/NotificationList';
 import TaskForm from './components/Tasks/Taskform/TaskForm';
+import ProjectForm from './components/projects/ProjectForm/ProjectForm';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/form" element={<TaskForm setTaskList={setTaskList} />} />
         <Route path="/notify" element={<NotificationList />} />
+        <Route path="/projectForm" element={<ProjectForm />} />
       </Routes>
     </div>
   );

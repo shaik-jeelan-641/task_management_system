@@ -1,22 +1,22 @@
 import Project from "../models/Project.js";
 
 export const addProject = async (req, res) => {
-    try {
-        const { name, description, dependencies } = req.body;
+  try {
+    const { name, description, category } = req.body;
 
-        if (!name || !description) {
-            return res.status(400).json({ message: "Name and description are required" });
-        }
-
-        const project = new Project({ name, description, dependencies });
-        await project.save();
-
-        res.status(201).json(project);
-    } catch (error) {
-        res.status(500).json({ message: "Server error", error: error.message });
+    if (!name || !description || !category) {
+      return res.status(400).json({ error: "All fields are required." });
     }
-};
 
+    const newProject = new Project({ name, description, category });
+    await newProject.save();
+
+    res.status(201).json({ message: "Project added successfully", project: newProject });
+  } catch (error) {
+    console.error("Error adding project:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}
 export const getProjects = async (req, res) => {
     try {
         const projects = await Project.find();
