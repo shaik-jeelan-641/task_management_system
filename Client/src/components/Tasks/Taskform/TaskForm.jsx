@@ -18,7 +18,7 @@ const TaskForm = ({ setTaskList }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if all required fields are filled
+
     if (!task.title || !task.description || !task.status || !task.priority || !task.dueDate || !task.assignedTo) {
       alert('All fields must be filled');
       return;
