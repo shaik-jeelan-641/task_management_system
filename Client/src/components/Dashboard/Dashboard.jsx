@@ -140,7 +140,7 @@ function Dashboard({ id }) {
       <div className="project-plan">
         <div className="header">
           <h1><FaRegFileAlt /> 
-           {projectName ? `Project: ${projectName}` : "Dashboard"}
+           {projectName ? ` ${projectName}` : "Dashboard"}
           </h1>
           <FaStar className="icon-btn" />
           <button className="status-btn">Set status</button>

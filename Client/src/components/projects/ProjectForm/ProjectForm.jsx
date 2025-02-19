@@ -3,6 +3,7 @@ import axios from "axios";
 import { TextField, Button, Box, Paper, MenuItem } from "@mui/material";
 import { useProject } from "../../../context/projectContext"; 
 import "./projectForm.css";
+import { useNavigate } from "react-router-dom";
 
 function ProjectForm() {
   const { setProjectName } = useProject(); 
@@ -11,6 +12,8 @@ function ProjectForm() {
     description: "",
     category: "",
   });
+
+  const navigate =useNavigate()
 
   const handleChange = (e) => {
     setFormData((prevData) => ({
@@ -29,6 +32,7 @@ function ProjectForm() {
     );
     console.log("Project Added:", response.data);
     setFormData({ name: "", description: "", category: "" });
+navigate('/dashboard')
   } catch (err) {
     console.error("Error submitting project:", err.response?.data || err.message);
   }
